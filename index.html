@@ -10,22 +10,21 @@
 
     <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" defer></script>
 <script>
-  window.OneSignal = window.OneSignal || [];
-  OneSignal.push(function() {
-    OneSignal.init({
-      appId: "628bf4d2-abda-4359-a87f-cc03e75f46ee",
-      safari_web_id: "web.onesignal.auto.3182d724-6e8d-450b-a283-f7f35292ae01",
-      notifyButton: {
-        enable: true,
-      },
-      allowLocalhostAsSecureOrigin: true,
-      OneSignal.push(function () {
+   var OneSignal = window.OneSignal || [];
+    var initConfig = {
+        appId: "628bf4d2-abda-4359-a87f-cc03e75f46ee",
+        safari_web_id: "web.onesignal.auto.3182d724-6e8d-450b-a283-f7f35292ae01",
+        notifyButton: {
+            enable: true
+        },
+    };
+    OneSignal.push(function () {
         OneSignal.SERVICE_WORKER_PARAM = { scope: '/push/onesignal/' };
         OneSignal.SERVICE_WORKER_PATH = 'push/onesignal/OneSignalSDKWorker.js'
         OneSignal.SERVICE_WORKER_UPDATER_PATH = 'push/onesignal/OneSignalSDKWorker.js'
         OneSignal.init(initConfig);
     });
-  });
+</script>
 </script>
   </head>
   <body>
